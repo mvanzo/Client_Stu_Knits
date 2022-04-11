@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Spring Forward React 18 Boilerplate
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Except, it was not working at the time of this repo's uploading because React 18 just came out. However, I have manually fixed some errors and reinstalled some dependencies to make this boilerplate work. Feel free to clone this repo and use it as a starting point.
 
 ## Available Scripts
 
