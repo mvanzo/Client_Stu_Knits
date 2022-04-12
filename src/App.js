@@ -13,6 +13,7 @@ export default function App() {
   return (
     <Router>
       <div>
+        testing
         <Navbar/>
         <Routes>
           <Route
