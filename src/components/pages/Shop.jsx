@@ -1,5 +1,5 @@
 export default function Shop(){
     return(
-        <h1>Shopping Page</h1>
+        <h1>Shopping Page Here</h1>
     )
 }
