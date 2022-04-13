@@ -15,9 +15,11 @@ export default function Shop(){
 
     const mappedProducts = products.map((product, idx)=> {
         return(
-            <div className="product" key={idx}>
+            <div className="product ui-card" key={idx}>
                 <img src={product.imgUrl} alt={product.name} />
-                <div className="product-info">
+                <div className="product-info description">
+                    <p>{product.description}</p>
+                    <a href="#">Place Order</a>
                     <p>{product.name}</p>
                     <p><strong>${product.price}</strong></p>
                 </div>
