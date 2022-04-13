@@ -15,15 +15,25 @@ export default function Shop(){
 
     const mappedProducts = products.map((product, idx)=> {
         return(
-            <p key={idx}>{product.name}</p>
+            <div className="product" key={idx}>
+                <img src={product.imgUrl} alt={product.name} />
+                <div className="product-info">
+                    <p>{product.name}</p>
+                    <p><strong>${product.price}</strong></p>
+                </div>
+            </div>
         )
     })
 
     return(
-        <>
-        <h1>Shopping Page</h1>
-        <h3>Featured Products</h3>
-        {mappedProducts}
-        </>
+        <div>
+            <h1>Shopping Page</h1>
+            <main>
+                <h1>Featured Products</h1>
+                    <div className="products">
+                    {mappedProducts}
+                </div>
+            </main>
+        </div>
     )
 }
