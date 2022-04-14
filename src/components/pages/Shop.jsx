@@ -23,7 +23,7 @@ export default function Shop({ cart, addToCart }){
                     <button onClick={() => addToCart(product)}>Add to cart</button>
                     <a href={'/checkout/'+idx}>Place Order</a>
                     <p>{product.name}</p>
-                    <p><strong>${product.price}</strong></p>
+                    <p><strong>${product.priceInCents}</strong></p>
                 </div>
             </div>
         )

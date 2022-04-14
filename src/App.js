@@ -4,6 +4,8 @@ import Navbar from "./components/layout/Navbar"
 import Footer from "./components/layout/Footer"
 import Shop from "./components/pages/Shop"
 import Checkout from "./components/pages/Checkout"
+import Login from "./components/pages/Login"
+import Register from "./components/pages/Register"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { useState } from "react"
 
@@ -33,6 +35,8 @@ export default function App() {
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
                     <Route
                         path="/shop"
                         element={<Shop cart={cart} addToCart={addToCart} />}

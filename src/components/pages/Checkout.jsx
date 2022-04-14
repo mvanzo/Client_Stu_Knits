@@ -1,18 +1,22 @@
 export default function Checkout({ cart }){
 
     const handleCheckout = () => {
-        console.log('button clicked')
         fetch(`${process.env.REACT_APP_SERVER_URL}/api-v1/checkout`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
+            // body: JSON.stringify({
+            //     items: [
+            //         { id: 1, quantity: 3 },
+            //         { id: 2, quantity: 1 }
+            //     ],
+            // }),
+
+            // testing map through cart to add to map items
             body: JSON.stringify({
-                items: [
-                    { id: 1, quantity: 3 },
-                    { id: 2, quantity: 1 }
-                ],
-            }),
+                items: cart
+            })
         })
             .then(res=> {
                 if(res.ok) return res.json()
@@ -27,9 +31,9 @@ export default function Checkout({ cart }){
             })
     }
 
-    const displayCart = cart.map(product=> {
+    const displayCart = cart.map((product, idx)=> {
         return(
-            <div>
+            <div key={idx}>
                 <h1>
                 {product.name} || 
                 {product.quantity}
@@ -37,12 +41,20 @@ export default function Checkout({ cart }){
             </div>
         )
     })
+    
+    const stripeArr = cart.map(product => {
+
+    })
 
     return(
         <div>
             <h1>Purchase Page</h1>
-            {displayCart}
-            <button onClick={handleCheckout}>Checkout</button>
+            {displayCart.length == 0 ? 'you have no items in your cart' : 
+            <div>
+                {displayCart}
+                <button onClick={handleCheckout}>Checkout</button>
+            </div>
+            }
         </div>
     )
 }

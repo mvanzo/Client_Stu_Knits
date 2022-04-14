@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 
 export default function Cart({ cart }) {
-    const displayCart = cart.map(product=> {
+    const displayCart = cart.map((product, idx)=> {
         return(
-            <div>
+            <div key={idx}>
                 <h1>
                 {product.name} || 
                 {product.quantity}
