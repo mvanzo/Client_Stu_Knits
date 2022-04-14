@@ -3,6 +3,7 @@ import Home from './components/pages/Home';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Shop from './components/pages/Shop';
+import Checkout from './components/pages/Checkout';
 import {
   BrowserRouter as Router,
   Route,
@@ -22,6 +23,10 @@ export default function App() {
           <Route
             path='/shop'
             element={<Shop/>}  
+          />
+          <Route
+            path='/checkout/:id'
+            element={<Checkout />}  
           />
         </Routes>
         <Footer/>

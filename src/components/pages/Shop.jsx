@@ -19,7 +19,7 @@ export default function Shop(){
                 <img src={product.imgUrl} alt={product.name} />
                 <div className="product-info description">
                     <p>{product.description}</p>
-                    <a href="#">Place Order</a>
+                    <a href={'/checkout/'+idx}>Place Order</a>
                     <p>{product.name}</p>
                     <p><strong>${product.price}</strong></p>
                 </div>
