@@ -11,6 +11,7 @@ import { useState } from "react"
 
 export default function App() {
     const [cart, setCart] = useState([])
+    const [currentUser, setCurrentUser] = useState(null)
 
     const addToCart = (product) => {
         // console.log(product)
@@ -36,7 +37,7 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
+                    <Route path="/register" element={<Register currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
                     <Route
                         path="/shop"
                         element={<Shop cart={cart} addToCart={addToCart} />}
