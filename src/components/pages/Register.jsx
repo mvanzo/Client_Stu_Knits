@@ -31,7 +31,6 @@ export default function Register({ currentUser, setCurrentUser }) {
                 const decoded = jwt_decode(token)
                 // log the user in
                 setCurrentUser(decoded)
-                setShowForm(false)
             } else {
                 setMsg("the two passwords you entered do not match 🥴")
             }

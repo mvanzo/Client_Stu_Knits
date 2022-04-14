@@ -33,10 +33,10 @@ export default function App() {
     return (
         <Router>
             <div>
-                <Navbar />
+                <Navbar currentUser={currentUser} />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
+                    <Route path="/login" element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
                     <Route path="/register" element={<Register currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
                     <Route
                         path="/shop"
