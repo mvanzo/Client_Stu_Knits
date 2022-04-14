@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
+import Cart from "../Cart"
 
-export default function Shop(){
+export default function Shop({ addToCart }){
     const [products, setProducts] = useState([])
 
     useEffect(()=> {
@@ -19,6 +20,7 @@ export default function Shop(){
                 <img src={product.imgUrl} alt={product.name} />
                 <div className="product-info description">
                     <p>{product.description}</p>
+                    <button onClick={() => addToCart(product)}>Add to cart</button>
                     <a href={'/checkout/'+idx}>Place Order</a>
                     <p>{product.name}</p>
                     <p><strong>${product.price}</strong></p>
@@ -30,6 +32,7 @@ export default function Shop(){
     return(
         <div>
             <h1>Shopping Page</h1>
+            <Cart />
             <main>
                 <h1>Featured Products</h1>
                     <div className="products">
