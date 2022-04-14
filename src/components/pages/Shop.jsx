@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import Cart from "../Cart"
 
-export default function Shop({ addToCart }){
+export default function Shop({ cart, addToCart }){
     const [products, setProducts] = useState([])
 
     useEffect(()=> {
@@ -32,7 +32,7 @@ export default function Shop({ addToCart }){
     return(
         <div>
             <h1>Shopping Page</h1>
-            <Cart />
+            <Cart cart={cart}/>
             <main>
                 <h1>Featured Products</h1>
                     <div className="products">

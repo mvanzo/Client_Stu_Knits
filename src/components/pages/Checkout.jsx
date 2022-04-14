@@ -1,4 +1,4 @@
-export default function Checkout(){
+export default function Checkout({ cart }){
 
     const handleCheckout = () => {
         console.log('button clicked')
@@ -27,9 +27,21 @@ export default function Checkout(){
             })
     }
 
+    const displayCart = cart.map(product=> {
+        return(
+            <div>
+                <h1>
+                {product.name} || 
+                {product.quantity}
+                </h1>
+            </div>
+        )
+    })
+
     return(
         <div>
             <h1>Purchase Page</h1>
+            {displayCart}
             <button onClick={handleCheckout}>Checkout</button>
         </div>
     )
