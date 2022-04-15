@@ -3,7 +3,7 @@ import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import { Navigate } from 'react-router-dom'
 
-export default function Login({ currentUser, setCurrentUser, setShowForm }) {
+export default function Login({ currentUser, setCurrentUser }) {
   const [form, setForm] = useState({
     email: '',
     password: ''
@@ -52,7 +52,7 @@ export default function Login({ currentUser, setCurrentUser, setShowForm }) {
           />
         </div>
 
-        <div class="form-group">
+        <div>
           <label className='form-label mt-4' htmlFor="password">Password:</label>
           <input
             id="password"
