@@ -32,17 +32,63 @@ export default function Orders({ currentUser }) {
                 <p>Order Total: ${order.amount/100}</p>
                 <p>Name: {order.billing_details.name}</p>
                 <p>email: {order.billing_details.email}</p>
+                <p>{order.customer}</p>
                 <p>Order ID: {order.id}</p>
                 <br />
             </div>
         )
     })
-    
+
+    if (currentUser) {
+        const filteredOrders = orders.filter(item=>{
+            console.log(item.billing_details.email)
+            if (item.billing_details.email == currentUser.email) {
+                return true
+            }
+        })
+
+        const userOrders = filteredOrders.map((order, idx)=> {
+            return(
+                <div key={idx}>
+                    <br />
+                    {/* <p>{order.customer_details}</p> */}
+                    <p>Order Total: ${order.amount/100}</p>
+                    <p>Name: {order.billing_details.name}</p>
+                    <p>email: {order.billing_details.email}</p>
+                    <p>{order.customer}</p>
+                    <p>Order ID: {order.id}</p>
+                    <br />
+                </div>
+            )
+        })
+    }
+
+    // const userOrders = filteredOrders.map((order, idx)=> {
+    //     return(
+    //         <div key={idx}>
+    //             <br />
+    //             {/* <p>{order.customer_details}</p> */}
+    //             <p>Order Total: ${order.amount/100}</p>
+    //             <p>Name: {order.billing_details.name}</p>
+    //             <p>email: {order.billing_details.email}</p>
+    //             <p>{order.customer}</p>
+    //             <p>Order ID: {order.id}</p>
+    //             <br />
+    //         </div>
+    //     )
+    // })
+
+    // console.log(userOrders)
 
     return(
         <div>
             <h1>this is the orders page</h1>
-            {currentUser && currentUser.admin == true ? adminOrders : 'nothing to see here'}
+            {currentUser && currentUser.admin == true ? adminOrders : 'no orders to review'}
+            {/* {filteredOrders} */}
+            {currentUser ? userOrders : '' }
+
+            {currentUser }
+
         </div>
     )
 }
