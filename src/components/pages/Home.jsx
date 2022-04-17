@@ -2,8 +2,8 @@ import {Carousel} from 'react-bootstrap'
 
 export default function Home() {
     return(
-        <div className='homepage content'>
-            <h3 className='my-3'>Welcome to Stu Knits - the e-commerce page to get yourself on the ever-growing queue of things for Emily to knit</h3>
+        <div className='content'>
+            <h3 className='my-3 mx-5' style={{ textAlign: 'center' }}>Stu Knits || e-commerce for all things knit by Emily</h3>
 
             <Carousel className="mt-4 carousel col-12 col-md-6 col-lg-4">
                 <Carousel.Item>

@@ -46,7 +46,7 @@ export default function Register({ currentUser, setCurrentUser }) {
 	if (currentUser) return <Navigate to='/' />
 
     return (
-        <div className="form">
+        <div className="form content">
 			{/* {currentUser ? <Navigate to='/' /> : 'please log in'} */}
 
             <p>{msg}</p>

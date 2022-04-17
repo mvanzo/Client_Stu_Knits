@@ -70,7 +70,7 @@ export default function Cart ({ cart, setCart, addToCart }){
 
 
     return(
-        <div className='mx-4 my-3'>
+        <div className='mx-4 my-3 content'>
             <h1>Your Cart</h1>
             
             {mappedCart.length == 0 ? 'you have no items in your cart' : 

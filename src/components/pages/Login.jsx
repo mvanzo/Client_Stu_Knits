@@ -38,7 +38,7 @@ export default function Login({ currentUser, setCurrentUser }) {
     if (currentUser) return <Navigate to="/" />
 
     return (
-        <div className="form">
+        <div className="form content">
             <p>{msg ? `the server has a message for you: ${msg}` : ""}</p>
 
             <form onSubmit={handleFormSubmit}>

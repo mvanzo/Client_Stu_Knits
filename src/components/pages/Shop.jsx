@@ -42,9 +42,6 @@ export default function Shop({ cart, addToCart, currentUser }){
                     {mappedProducts}
                 </div>
             </main>
-            <div>
-                <Cart cart={cart}/>
-            </div>
         </div>
     )
 }

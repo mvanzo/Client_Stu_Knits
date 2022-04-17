@@ -64,7 +64,7 @@ export default function Orders({ currentUser }) {
     </div>
 
     return(
-        <div className="center w-75 mt-4">
+        <div className="center w-75 mt-4 content">
             {ordersTable}
         </div>
     )
