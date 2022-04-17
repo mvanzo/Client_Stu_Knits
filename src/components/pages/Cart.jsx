@@ -1,4 +1,4 @@
-export default function Checkout({ cart }){
+export default function Cart ({ cart }){
 
     const handleCheckout = () => {
         fetch(`${process.env.REACT_APP_SERVER_URL}/api-v1/checkout`, {

@@ -72,7 +72,8 @@ a:hover {
 
 .product img {
 	width: 100%;
-	max-width: 350px;
+	max-width: 400px;
+	margin: 0 auto;
 }
 
 .product p {
@@ -91,11 +92,6 @@ a:hover {
 	padding-bottom: 40px;
 }
 
-
-/* navbar with hamburger menu */
-
-.navbar {
-	background: linear-gradient(to left, #f46b45, #eea849);
-	color: #FFF;
-	padding: 0 1.5em;
+.carousel {
+	margin: 0 auto;
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import Cart from "../Cart"
 
-export default function Shop({ cart, addToCart }){
+export default function Shop({ cart, addToCart, currentUser }){
     const [products, setProducts] = useState([])
 
     useEffect(()=> {
@@ -22,9 +22,13 @@ export default function Shop({ cart, addToCart }){
                 <div className="product-info">
                     <p>{product.description}</p>
                     {/* <a href={'/checkout/'+idx}>Place Order</a> */}
-                    <p>Knitting time: {product.timeToMake} hours</p>
+                    <p>Yarn: {product.yarn}</p>
                     <p><strong>${product.priceInCents/100}</strong></p>
-                    <button onClick={() => addToCart(product)}>Add to cart</button>
+                    {currentUser ? 
+                        <button className="btn-success test" onClick={() => addToCart(product)}>Add to cart</button>
+                    :
+                    ''
+                    }
                 </div>
             </div>
         )
@@ -33,7 +37,7 @@ export default function Shop({ cart, addToCart }){
     return(
         <div className="content">
             <main>
-                <h1>Featured Products</h1>
+                <h1 className="my-3" style={{ textAlign: 'center' }}>Featured Products</h1>
                 <div className="products">
                     {mappedProducts}
                 </div>

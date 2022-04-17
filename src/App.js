@@ -1,9 +1,8 @@
 import "./App.css"
 import Home from "./components/pages/Home"
-import Navbar from "./components/layout/Navbar"
 import Footer from "./components/layout/Footer"
 import Shop from "./components/pages/Shop"
-import Checkout from "./components/pages/Checkout"
+import Cart from "./components/pages/Cart"
 import Login from "./components/pages/Login"
 import Register from "./components/pages/Register"
 import Admin from "./components/pages/Admin"
@@ -11,7 +10,6 @@ import Orders from "./components/pages/Orders"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { useState, useEffect } from "react"
 import jwt_decode from "jwt-decode"
-// import { NavbarTwo } from "./components/layout/Navbar/index"
 import NavbarComp from "./components/layout/NavbarComp"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -69,9 +67,9 @@ export default function App() {
                     <Route path="/register" element={<Register currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
                     <Route
                         path="/shop"
-                        element={<Shop cart={cart} addToCart={addToCart} />}
+                        element={<Shop cart={cart} addToCart={addToCart} currentUser={currentUser}/>}
                         />
-                    <Route path="/checkout" element={<Checkout cart={cart} />} />
+                    <Route path="/cart" element={<Cart cart={cart} />} />
                     <Route path="/admin" element={<Admin currentUser={currentUser} />} />
                     <Route path="/orders" element={<Orders currentUser={currentUser} />} />
                 </Routes>
