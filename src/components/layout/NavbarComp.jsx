@@ -9,6 +9,7 @@ export default function NavbarComp({ handleLogout, currentUser, cart }) {
             <Nav.Link as={Link} to="/">
                 <span onClick={handleLogout}>Log Out</span>
             </Nav.Link>
+            <Nav.Link as={Link} to='/orders'>Order History</Nav.Link>
         </>
     )
 

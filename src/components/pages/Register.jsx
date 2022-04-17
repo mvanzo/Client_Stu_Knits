@@ -46,8 +46,7 @@ export default function Register({ currentUser, setCurrentUser }) {
 	if (currentUser) return <Navigate to='/' />
 
     return (
-        <div>
-
+        <div className="form">
 			{/* {currentUser ? <Navigate to='/' /> : 'please log in'} */}
 
             <p>{msg}</p>
@@ -56,8 +55,8 @@ export default function Register({ currentUser, setCurrentUser }) {
                 <br />
                 <h4>Register a new account</h4>
                 <br />
-                <div>
-                    <label htmlFor="email">Email:</label>
+                <div className="form-group">
+                    <label className="form-label mt-2" htmlFor="email">Email:</label>
                     <input
                         type="email"
                         id="email"
@@ -70,7 +69,7 @@ export default function Register({ currentUser, setCurrentUser }) {
                 </div>
 
                 <div>
-                    <label htmlFor="name">Name:</label>
+                    <label className="form-label mt-2" htmlFor="name">Name:</label>
                     <input
                         type="text"
                         id="name"
@@ -83,7 +82,7 @@ export default function Register({ currentUser, setCurrentUser }) {
                 </div>
 
                 <div>
-                    <label htmlFor="password">Password:</label>
+                    <label className="form-label mt-2" htmlFor="password">Password:</label>
                     <input
                         type="password"
                         id="password"
@@ -95,7 +94,7 @@ export default function Register({ currentUser, setCurrentUser }) {
                     />
                 </div>
                 <div>
-                    <label htmlFor="passwordConfirmation">
+                    <label className="form-label mt-2" htmlFor="passwordConfirmation">
                         Confirm Your Password:
                     </label>
                     <input
@@ -112,7 +111,11 @@ export default function Register({ currentUser, setCurrentUser }) {
                     />
                 </div>
 
-                <input type="submit" />
+                <input className="btn btn-primary mt-2" type="submit" />
+
+                <div className="mt-5">
+					<h5>If you already have an account, log in <a style={{ textDecoration: 'none' }} href="/login">here</a></h5>
+				</div>	
             </form>
         </div>
     )
