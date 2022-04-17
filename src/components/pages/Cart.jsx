@@ -26,7 +26,7 @@ export default function Cart ({ cart, setCart, addToCart }){
     const removeFromCart = (product) => {
 		const inCart = cart.find((x) => x.name === product.name)
         if (inCart.quantity === 1) {
-            setCart(cart.filter((x) => x.id !== product.id))
+            setCart(cart.filter((x) => x.name !== product.name))
         }
         else {
 			setCart(
@@ -53,24 +53,24 @@ export default function Cart ({ cart, setCart, addToCart }){
 
     const cartTable = 
         <div>
-            <table class="table table-striped">
-                    <thead>
-                        <tr>
+            <table class="table table-striped w-75" style={{ border: '1px solid black' }}>
+                <thead>
+                    <tr>
                         <th scope="col">Item</th>
                         <th scope="col">Cost</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                    </tr>
+                </thead>
+                <tbody>
                     {mappedCart}
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
         </div>
 
 
     return(
-        <div className='mx-2 my-3'>
+        <div className='mx-4 my-3'>
             <h1>Your Cart</h1>
             
             {mappedCart.length == 0 ? 'you have no items in your cart' : 
