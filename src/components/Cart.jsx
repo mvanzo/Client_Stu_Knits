@@ -13,10 +13,10 @@ export default function Cart({ cart }) {
     })
 
     return(
-        <>
-        <h5>this is a cart</h5>
-        {cart.length == 0 ? 'your cart is empty ' : displayCart}
-        {cart.length >0 ? <Link to='/checkout'>Checkout</Link> : ''}
-        </>
+        <aside>
+            <h2>Cart Items</h2>
+            {cart.length == 0 ? 'your cart is empty ' : displayCart}
+            {cart.length > 0 ? <Link to='/checkout'>Checkout</Link> : ''}
+        </aside>
     )
 }

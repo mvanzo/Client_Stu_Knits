@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
+import Cart from "../Cart"
 
-export default function Navbar({ handleLogout, currentUser }){
+export default function Navbar({ handleLogout, currentUser, cart }){
     const loggedIn = (
         <>
             <Link to="/">
-                <span onClick={handleLogout}>Log Out</span>
+                <span onClick={handleLogout}> Log Out |</span>
             </Link>
             {/* <Link to="/profile">Profile</Link> */}
         </>
@@ -12,21 +13,21 @@ export default function Navbar({ handleLogout, currentUser }){
 
     const loggedOut = (
         <>
-            <Link to="/register">Register</Link>
-            <Link to="/login">Log In</Link>
+            <Link to="/register"> Register |</Link>
+            <Link to="/login"> Log In |</Link>
         </>
     )
 
-    
     return(
-        <header>
+        <header className="navbar row block center">
             <div>
-                <Link to='/'> Stu Knits </Link>
+                <h2><Link to='/'> Stu Knits </Link></h2>
             </div>
-            <div>
-                <Link to='/shop'> Shop </Link>
+            <div id="nav-links">
+                <Link to='/shop'>| Shop |</Link>
+                <Link to="/checkout"> Cart({cart.length}) |</Link>
                 {currentUser ? loggedIn : loggedOut}
-                {currentUser && currentUser.admin == true ? <Link to="/admin">Admin</Link> : ''}
+                {currentUser && currentUser.admin == true ? <Link to="/admin"> Admin </Link> : ''}
             </div>
         </header>
     )

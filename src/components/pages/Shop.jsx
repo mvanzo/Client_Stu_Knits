@@ -16,29 +16,31 @@ export default function Shop({ cart, addToCart }){
 
     const mappedProducts = products.map((product, idx)=> {
         return(
-            <div className="product ui-card" key={idx}>
+            <div className="product" key={idx}>
+                <h3 className="product-name"><strong>{product.name}</strong></h3>
                 <img src={product.imgUrl} alt={product.name} />
-                <div className="product-info description">
+                <div className="product-info">
                     <p>{product.description}</p>
+                    {/* <a href={'/checkout/'+idx}>Place Order</a> */}
+                    <p>Knitting time: {product.timeToMake} hours</p>
+                    <p><strong>${product.priceInCents/100}</strong></p>
                     <button onClick={() => addToCart(product)}>Add to cart</button>
-                    <a href={'/checkout/'+idx}>Place Order</a>
-                    <p>{product.name}</p>
-                    <p><strong>${product.priceInCents}</strong></p>
                 </div>
             </div>
         )
     })
 
     return(
-        <div>
-            <h1>Shopping Page</h1>
-            <Cart cart={cart}/>
+        <div className="content">
             <main>
                 <h1>Featured Products</h1>
-                    <div className="products">
+                <div className="products">
                     {mappedProducts}
                 </div>
             </main>
+            <div>
+                <Cart cart={cart}/>
+            </div>
         </div>
     )
 }

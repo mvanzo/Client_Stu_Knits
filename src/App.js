@@ -11,6 +11,10 @@ import Orders from "./components/pages/Orders"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { useState, useEffect } from "react"
 import jwt_decode from "jwt-decode"
+// import { NavbarTwo } from "./components/layout/Navbar/index"
+import NavbarComp from "./components/layout/NavbarComp"
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 export default function App() {
     const [cart, setCart] = useState([])
@@ -55,8 +59,10 @@ export default function App() {
     return (
         <Router>
             <div>
-                <Navbar handleLogout={handleLogout} currentUser={currentUser} />
-                                
+                {/* <Navbar handleLogout={handleLogout} currentUser={currentUser} cart={cart}/> */}
+                {/* <NavbarTwo /> */}
+                <NavbarComp handleLogout={handleLogout} currentUser={currentUser} cart={cart}/>
+                <div>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
@@ -64,11 +70,12 @@ export default function App() {
                     <Route
                         path="/shop"
                         element={<Shop cart={cart} addToCart={addToCart} />}
-                    />
+                        />
                     <Route path="/checkout" element={<Checkout cart={cart} />} />
                     <Route path="/admin" element={<Admin currentUser={currentUser} />} />
                     <Route path="/orders" element={<Orders currentUser={currentUser} />} />
                 </Routes>
+                </div>            
                 <Footer />
             </div>
         </Router>
