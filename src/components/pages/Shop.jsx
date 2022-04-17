@@ -25,7 +25,7 @@ export default function Shop({ cart, addToCart, currentUser }){
                     <p>Yarn: {product.yarn}</p>
                     <p><strong>${product.priceInCents/100}</strong></p>
                     {currentUser ? 
-                        <button className="btn-success test" onClick={() => addToCart(product)}>Add to cart</button>
+                        <button className="btn btn-primary" onClick={() => addToCart(product)}>Add to cart</button>
                     :
                     ''
                     }

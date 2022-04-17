@@ -1,4 +1,4 @@
-export default function Cart ({ cart }){
+export default function Cart ({ cart, setCart, addToCart }){
 
     const handleCheckout = () => {
         fetch(`${process.env.REACT_APP_SERVER_URL}/api-v1/checkout`, {
@@ -23,24 +23,60 @@ export default function Cart ({ cart }){
             })
     }
 
-    const displayCart = cart.map((product, idx)=> {
-        return(
-            <div key={idx}>
-                <h1>
-                {product.name} || 
-                {product.quantity}
-                </h1>
-            </div>
-        )
+    const removeFromCart = (product) => {
+		const inCart = cart.find((x) => x.name === product.name)
+        if (inCart.quantity === 1) {
+            setCart(cart.filter((x) => x.id !== product.id))
+        }
+        else {
+			setCart(
+				cart.map((x)=> 
+					x.name === product.name ? {...inCart, quantity: inCart.quantity - 1} : x
+				)
+			)
+        }
+    }
+
+    const mappedCart = cart.map((product, idx)=> {
+            return(
+                <tr key={idx}>
+                    <td>{product.name}</td>
+                    <td>${product.priceInCents/100}</td>
+                    <td>{product.quantity}</td>
+                    <td>
+                        <button onClick={() => addToCart(product)} className="btn btn-primary">+</button>
+                        <button onClick={() => removeFromCart(product)} className="btn btn-danger">-</button>
+                    </td>
+                </tr>
+            )
     })
 
-    return(
+    const cartTable = 
         <div>
-            <h1>Purchase Page</h1>
-            {displayCart.length == 0 ? 'you have no items in your cart' : 
+            <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {mappedCart}
+                    </tbody>
+                </table>
+        </div>
+
+
+    return(
+        <div className='mx-2 my-3'>
+            <h1>Your Cart</h1>
+            
+            {mappedCart.length == 0 ? 'you have no items in your cart' : 
             <div>
-                {displayCart}
-                <button onClick={handleCheckout}>Checkout</button>
+                {cartTable}
+                <button className="btn btn-primary" onClick={handleCheckout}>Checkout</button>
             </div>
             }
         </div>

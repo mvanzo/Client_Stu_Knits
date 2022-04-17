@@ -68,11 +68,12 @@ a:hover {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	width: 300px;
 }
 
 .product img {
 	width: 100%;
-	max-width: 400px;
+	max-width: 300px;
 	margin: 0 auto;
 }
 

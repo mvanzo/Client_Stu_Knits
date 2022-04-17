@@ -69,7 +69,7 @@ export default function App() {
                         path="/shop"
                         element={<Shop cart={cart} addToCart={addToCart} currentUser={currentUser}/>}
                         />
-                    <Route path="/cart" element={<Cart cart={cart} />} />
+                    <Route path="/cart" element={<Cart cart={cart} setCart={setCart} addToCart={addToCart}/>} />
                     <Route path="/admin" element={<Admin currentUser={currentUser} />} />
                     <Route path="/orders" element={<Orders currentUser={currentUser} />} />
                 </Routes>
