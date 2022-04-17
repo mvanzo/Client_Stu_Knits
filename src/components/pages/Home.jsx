@@ -22,8 +22,8 @@ export default function Home() {
                 <Carousel.Item>
                     <img
                     className="d-block w-75 center"
-                    src="holder.js/800x400?text=Second slide&bg=282c34"
-                    alt="Second slide"
+                    src="https://i.imgur.com/GH1AATG.jpg"
+                    alt="green men's sweater"
                     />
 
                     <Carousel.Caption>
@@ -35,8 +35,8 @@ export default function Home() {
                 <Carousel.Item>
                     <img
                     className="d-block w-75 center"
-                    src="holder.js/800x400?text=Third slide&bg=20232a"
-                    alt="Third slide"
+                    src="https://i.imgur.com/phInPIe.jpg"
+                    alt="dog on a knit blanket"
                     />
 
                     <Carousel.Caption>
@@ -44,6 +44,20 @@ export default function Home() {
                     <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
+                
+                <Carousel.Item>
+                    <img
+                    className="d-block w-75 center"
+                    src="https://i.imgur.com/9vU9FLV.jpg"
+                    alt="assorted stu knits materials with labels"
+                    />
+
+                    <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+ 
                 </Carousel>
         </div>
 
