@@ -7,6 +7,7 @@ import Login from "./components/pages/Login"
 import Register from "./components/pages/Register"
 import Admin from "./components/pages/Admin"
 import Orders from "./components/pages/Orders"
+import Success from "./components/pages/Success"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import { useState, useEffect } from "react"
 import jwt_decode from "jwt-decode"
@@ -72,6 +73,7 @@ export default function App() {
                     <Route path="/cart" element={<Cart cart={cart} setCart={setCart} addToCart={addToCart}/>} />
                     <Route path="/admin" element={<Admin currentUser={currentUser} />} />
                     <Route path="/orders" element={<Orders currentUser={currentUser} />} />
+                    <Route path="/success" element={<Success />} />
                 </Routes>
                 </div>            
                 <Footer />

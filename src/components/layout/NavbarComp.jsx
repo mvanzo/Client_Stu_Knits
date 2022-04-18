@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom'
 export default function NavbarComp({ handleLogout, currentUser, cart }) {
     const loggedIn = (
         <>
-            <Nav.Link as={Link} to="/shop">Shop</Nav.Link>
             <Nav.Link as={Link} to="/cart">Cart ({cart.length})</Nav.Link>
+            <Nav.Link as={Link} to="/shop">Shop</Nav.Link>
+            <Nav.Link as={Link} to='/orders'>Order History</Nav.Link>
             <Nav.Link as={Link} to="/">
                 <span onClick={handleLogout}>Log Out</span>
             </Nav.Link>
-            <Nav.Link as={Link} to='/orders'>Order History</Nav.Link>
         </>
     )
 
