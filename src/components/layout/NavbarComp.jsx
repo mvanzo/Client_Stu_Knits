@@ -32,7 +32,6 @@ export default function NavbarComp({ handleLogout, currentUser, cart }) {
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 {currentUser ? loggedIn : loggedOut}
-                                {/* {currentUser && currentUser.admin == true ? <Nav.Link as as={Link} to="/admin"> Admin </Nav.Link> : ''} */}
                             </Nav>
                         </Navbar.Collapse>
                     </div>

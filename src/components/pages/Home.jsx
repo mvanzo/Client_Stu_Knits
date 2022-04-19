@@ -3,7 +3,7 @@ import {Carousel} from 'react-bootstrap'
 export default function Home() {
     return(
         <div className='content'>
-            <h3 className='my-3 mx-5' style={{ textAlign: 'center' }}>Stu Knits || e-commerce for all things knit by Emily</h3>
+            <h3 className='my-3 mx-5' style={{ textAlign: 'center' }}>Stu Knits || e-commerce for all things knit</h3>
 
             <Carousel className="mt-4 carousel col-12 col-md-6 col-lg-4">
                 <Carousel.Item>
