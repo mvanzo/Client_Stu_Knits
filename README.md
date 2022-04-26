@@ -1,12 +1,40 @@
-# Commerce Template - Stu Knits
-Project idea: A template for a small e-commerce website that users could get a subscription to in order to sell their goods. For the initial deployment of this app, I will be creating a commerce page for my fiancee to be able to sell her knitting projects - Stu Knits. She will be able to upload designs and patterns that she would be able to make along with the expected turnaround time, color options, yarn material, and price. She will also be able to communicate with the buyer via email and update them when their order has been received, and shipped. Buyers will be able to see all the available options and make a purchase through Shopify API and get updates.
+[GitHub Server Repo](https://github.com/mvanzo/Server_Stu_Knits)
 
-# Technologies
-Full-stack MERN app with Shopify buy button for purchases. New technologies that I am considering implementing is GraphQL for buy button API call and Sass for styling.
+# Stu Knits
+Test e-commerce website allowing the Stu Knits company to sell their goods via Stripe's secure credit card checkout. Users can browse through the inventory of available knit goods, add to their cart, add quanity/remove from the cart and checkout. In current phase, Stripe's checkout only accepts the test credit card number (4242 4242 4242 4242). Users can also look up their order history. Admin privileges currently allow viewing of all orders placed via the Stripe checkout system.
 
-# Wireframes
+[Deployed Site](https://marty-vanzo.netlify.app/)
+
+# Tech Stack
+Decoupled MERN app with Stripe API for checkout
+
+# Planning Wireframes and ERD
+## Wireframes
 ![image](https://i.imgur.com/jFvEdIJ.png)
 ![image](https://i.imgur.com/4ZlEDM7.png)
 
-# ERD
+## ERD
 ![an ERD of my project](./StuKnitsERD.png)
+
+## Install Instructions
+1. Fork and clone this repo
+2. In the terminal, run npm i to install all needed packages
+3. Open client file in desired code editor
+  - Create a ```.env.local``` file
+    - Assign a Server Url like so:
+    ```js
+    REACT_APP_SERVER_URL=http://localhost:<whateverPortYouWant>
+    ```
+  - Move ```.env.local``` file into ```node_modules```
+4. Create an account on [Stripe](https://stripe.com/) and obtain your secret key from the Developer Dashboard
+    - While in testing, use `Secret key` as your API key, and if ready to deploy and accept payments use `Publishable key`
+5. Open server file in desired code editor
+  - Create a ```.env``` file
+    - Assign a port, URI for mongoDB, and JWT secret (for tokens), like so:
+    ```js
+    PORT=<thisPortShouldBeTheSamePortAssignedInTheServerUrl>
+    MONGODB_URI=mongodb://localhost/rankify
+    JWT_SECRET="whateverYouWant"
+    STRIPE_PRIVATE_KEY= paste your Stripe API key here
+    ```
+- Create a `.gitignore` file and place `.env` inside to be sure your API key and other sensitive info is not published online
