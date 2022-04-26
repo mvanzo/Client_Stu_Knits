@@ -3,6 +3,7 @@
 # Stu Knits
 Test e-commerce website allowing the Stu Knits company to sell their goods via Stripe's secure credit card checkout. Users can browse through the inventory of available knit goods, add to their cart, add quanity/remove from the cart and checkout. In current phase, Stripe's checkout only accepts the test credit card number (4242 4242 4242 4242). Users can also look up their order history. Admin privileges currently allow viewing of all orders placed via the Stripe checkout system.
 
+![image](https://i.imgur.com/dVmZL4Z.png)
 [Deployed Site](https://marty-vanzo.netlify.app/)
 
 # Tech Stack
