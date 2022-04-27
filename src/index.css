@@ -64,7 +64,9 @@ a:hover {
 
 .product {
 	border: 1px #404040 solid;
+	border-radius: 8px;
 	margin: 1rem;
+	padding: 1rem 0.4rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -75,6 +77,7 @@ a:hover {
 	width: 100%;
 	max-width: 300px;
 	margin: 0 auto;
+	border-radius: 3px;
 }
 
 .product p {
